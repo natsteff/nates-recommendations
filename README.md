@@ -12,6 +12,18 @@ A collection of things I recommend, including public repositories I’ve starred
 
   **Why use a VM for Docker?** You can run Docker on bare metal, but even for a single Docker host, running it in a Proxmox VM makes backup and recovery easier. Proxmox can schedule backups of the VM’s configuration and included virtual disks, then restore them together so you don’t have to rebuild the Docker host by hand. [Proxmox backup and restore](https://pve.proxmox.com/pve-docs/chapter-vzdump.html)
 
+### Docker Host Hardware
+
+Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, or a custom rackmount server. Choose hardware based on what your containers do, how many you run, and how much storage they need. Here are three examples from my own setup.
+
+| Host | My configuration | What it suits |
+| --- | --- | --- |
+| **Gigabyte BRIX GB-BSi5-6200** | Intel Core i5-6200U (2 cores, 4 threads), 16 GB RAM, 128 GB SSD | Compact, low-power host for lightweight Docker services |
+| **Dell OptiPlex 3040** | 16 GB RAM, 1 TB storage | Small to moderate workloads |
+| **Dell OptiPlex 3050 Micro** | 32 GB RAM, 4 TB SSD, access to a Synology NAS | Multiple services and storage-intensive apps |
+
+**A NAS makes modest hosts more capable.** Keep media libraries, documents, backups, and other large datasets on network storage. Local disk space is still useful for the operating system, container images, databases, and performance-sensitive app data. That split lets a mini PC with a small internal drive run services that use much larger datasets.
+
 <!-- github-stars:start -->
 Last successful sync that changed this list (UTC) · 2026-11-06
 
