@@ -66,7 +66,7 @@ class SyncTests(unittest.TestCase):
         updated = update(original, new_entries, "2026-11-07")
         self.assertNotIn("other/old", updated)
         self.assertIn("other/new", updated)
-        self.assertIn("2026-11-07", updated)
+        self.assertIn(new_entries + "\n\nLast successful sync that changed this list (UTC) · 2026-11-07\n" + END, updated)
         self.assertIn("- Curated item", updated)
         self.assertTrue(updated.endswith("## Another category\n"))
         self.assertEqual(update(updated, new_entries, "2026-11-08"), updated)

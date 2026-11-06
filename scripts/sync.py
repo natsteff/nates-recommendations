@@ -78,9 +78,9 @@ def render(pages):
 def update(readme, entries, today):
     before, generated = readme.split(START)
     old, after = generated.split(END)
-    if old.partition("\n\n")[2] == entries + "\n":
+    if old.rpartition("\n\n")[0] == entries:
         return readme
-    return f"{before}{START}Last successful sync that changed this list (UTC) · {today}\n\n{entries}\n{END}{after}"
+    return f"{before}{START}{entries}\n\nLast successful sync that changed this list (UTC) · {today}\n{END}{after}"
 
 
 def main():

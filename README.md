@@ -25,8 +25,6 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 **A NAS makes modest hosts more capable.** Keep media libraries, documents, backups, and other large datasets on network storage. Local disk space is still useful for the operating system, container images, databases, and performance-sensitive app data. That split lets a mini PC with a small internal drive run services that use much larger datasets.
 
 <!-- github-stars:start -->
-Last successful sync that changed this list (UTC) · 2026-11-06
-
 ### Docker & Self-Hosted Apps
 
 - **Audiobookshelf** ([advplyr/audiobookshelf](https://github.com/advplyr/audiobookshelf)) — Self-hosted audiobook and podcast server
@@ -76,4 +74,6 @@ Last successful sync that changed this list (UTC) · 2026-11-06
 - **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming across eight adventures.
 
 \* Shameless Self-Promotion
+
+Last successful sync that changed this list (UTC) · 2026-11-06
 <!-- github-stars:end -->
