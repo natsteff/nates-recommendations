@@ -12,7 +12,7 @@ A collection of things I recommend, including public repositories I’ve starred
 
   **Why use a VM for Docker?** You can run Docker on bare metal, but even for a single Docker host, running it in a Proxmox VM makes backup and recovery easier. Proxmox can schedule backups of the VM’s configuration and included virtual disks, then restore them together so you don’t have to rebuild the Docker host by hand. [Proxmox backup and restore](https://pve.proxmox.com/pve-docs/chapter-vzdump.html)
 
-### Docker Host Hardware
+### Docker Host and NAS (Network Attached Storage) Hardware
 
 Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, or a custom rackmount server. Choose hardware based on what your containers do, how many you run, and how much storage they need. Here are three examples from my own setup.
 
@@ -23,6 +23,14 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 | **Dell OptiPlex 3050 Micro** | 32 GB RAM, 4 TB SSD, access to a Synology NAS | Multiple services and storage-intensive apps |
 
 **A NAS makes modest hosts more capable.** Keep media libraries, documents, backups, and other large datasets on network storage. Local disk space is still useful for the operating system, container images, databases, and performance-sensitive app data. That split lets a mini PC with a small internal drive run services that use much larger datasets.
+
+**Buy a NAS or build your own.**
+
+- **Synology DiskStation DS225+** — A compact two-bay NAS for shared files, media, and backups. The [diskless model](https://a.co/d/06WDfLj9) lets you choose your own compatible drives. The [16 TB bundle](https://a.co/d/0htiYQk6) comes with two 8 TB Seagate IronWolf drives. That's 16 TB of raw capacity, or roughly 8 TB before formatting overhead if you mirror the two drives. [Synology specs and drive compatibility](https://www.synology.com/en-us/products/DS225%2B)
+- **TrueNAS Community Edition** — A free DIY option for a spare PC or a purpose-built NAS. It uses OpenZFS for storage pools and snapshots and can share files with your Docker hosts over the network. [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)
+- **openmediavault** — A free, Debian-based DIY option if you mainly want network file shares managed through a web interface. [openmediavault](https://www.openmediavault.org/)
+
+Keep a separate backup of anything you can't replace. A drive mirror helps if one drive fails, while a separate backup gives you another copy if files are deleted or the NAS itself is lost.
 
 <!-- github-stars:start -->
 ### Docker & Self-Hosted Apps
