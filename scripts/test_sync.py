@@ -50,7 +50,7 @@ class SyncTests(unittest.TestCase):
         ]])
         headings = [line for line in output.splitlines() if line.startswith("##")]
         self.assertEqual(headings, [
-            "### Docker & Self-Hosted Apps",
+            "## Docker & Self-Hosted Apps",
             "## Desktop & Mobile Apps",
             "## Other GitHub Stars",
         ])
