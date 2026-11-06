@@ -26,13 +26,13 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 
 #### NAS
 
-##### Retail Solutions
+#### Retail Solutions
 
 - **Synology DiskStation DS225+** — A compact two-bay NAS for shared files, media, and backups. The [diskless model](https://a.co/d/06WDfLj9) lets you choose your own compatible drives. The [16 TB bundle](https://a.co/d/0htiYQk6) comes with two 8 TB Seagate IronWolf drives. That's 16 TB of raw capacity, or roughly 8 TB before formatting overhead if you mirror the two drives. [Synology specs and drive compatibility](https://www.synology.com/en-us/products/DS225%2B)
 - **QNAP TS-264** — A two-bay NAS with two 2.5GbE ports and two M.2 slots for SSDs. [QNAP specifications](https://www.qnap.com/en-us/product/ts-264/specs/hardware/software)
 - **UGREEN NASync DXP2800** — A two-bay NAS for shared storage and backups. [UGREEN product page](https://www.ugreen.com/products/usa-25242)
 
-##### DIY
+#### DIY
 
 - **TrueNAS Community Edition** — A free DIY option for a spare PC or a purpose-built NAS. It uses OpenZFS for storage pools and snapshots and can share files with your Docker hosts over the network. [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)
 - **openmediavault** — A free, Debian-based DIY option if you mainly want network file shares managed through a web interface. [openmediavault](https://www.openmediavault.org/)
