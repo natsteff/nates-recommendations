@@ -11,6 +11,7 @@ START = "<!-- github-stars:start -->\n"
 END = "<!-- github-stars:end -->"
 README = Path(__file__).resolve().parents[1] / "README.md"
 ACCOUNT = "natsteff"
+EXCLUDED_REPOSITORIES = {"codeforeauclaire/codeforeauclaire.github.io"}
 PRODUCT_NAMES = json.loads(Path(__file__).with_name("product-names.json").read_text(encoding="utf-8"))
 
 
@@ -34,6 +35,8 @@ def render(pages):
             if repo.get("private") is not False or repo.get("visibility") != "public":
                 continue
             name = repo["full_name"]
+            if name.casefold() in EXCLUDED_REPOSITORIES:
+                continue
             if not re.fullmatch(r"[A-Za-z0-9-]+/[A-Za-z0-9_.-]+", name):
                 raise ValueError("Unexpected public repository name")
             summary = " ".join((repo["description"] or "").split())

@@ -8,7 +8,6 @@ These are public repositories I’ve starred on GitHub. Each entry links to the 
 Last successful sync that changed this list (UTC) · 2026-11-06
 
 - **Audiobookshelf** ([advplyr/audiobookshelf](https://github.com/advplyr/audiobookshelf)) — Self-hosted audiobook and podcast server
-- **Code for Eau Claire** ([codeforeauclaire/codeforeauclaire.github.io](https://github.com/codeforeauclaire/codeforeauclaire.github.io)) — The Code for Eau Claire Brigade website
 - **Dockpeek** ([dockpeek/dockpeek](https://github.com/dockpeek/dockpeek)) — Easily access your Docker container web interfaces and keep them up to date — across all your hosts.
 - **DOSee** ([bengarrett/DOSee](https://github.com/bengarrett/DOSee)) — DOSee is a DOSBox based, MS-DOS emulator for the web.
 - **ErsatzTV Legacy** ([ErsatzTV/legacy](https://github.com/ErsatzTV/legacy)) — Open-source platform that transforms your personal media library into live, custom TV channels.

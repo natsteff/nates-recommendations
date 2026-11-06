@@ -23,6 +23,10 @@ class SyncTests(unittest.TestCase):
         self.assertNotIn("private", output)
         self.assertNotIn("natsteff/own", recommendations)
 
+    def test_excluded_repository_is_omitted_even_if_returned_as_public(self):
+        output = render([[repository("CodeForEauClaire/codeforeauclaire.github.io")]])
+        self.assertNotIn("codeforeauclaire.github.io", output)
+
     def test_sort_by_product_name_with_canonical_spelling(self):
         output = render([[
             repository("getwud/wud"),
