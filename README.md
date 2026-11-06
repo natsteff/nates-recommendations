@@ -24,11 +24,20 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 
 **A NAS makes modest hosts more capable.** Keep media libraries, documents, backups, and other large datasets on network storage. Local disk space is still useful for the operating system, container images, databases, and performance-sensitive app data. That split lets a mini PC with a small internal drive run services that use much larger datasets.
 
-**Buy a NAS or build your own.**
+#### NAS
+
+##### Retail Solutions
 
 - **Synology DiskStation DS225+** — A compact two-bay NAS for shared files, media, and backups. The [diskless model](https://a.co/d/06WDfLj9) lets you choose your own compatible drives. The [16 TB bundle](https://a.co/d/0htiYQk6) comes with two 8 TB Seagate IronWolf drives. That's 16 TB of raw capacity, or roughly 8 TB before formatting overhead if you mirror the two drives. [Synology specs and drive compatibility](https://www.synology.com/en-us/products/DS225%2B)
+- **QNAP TS-264** — A two-bay NAS with two 2.5GbE ports and two M.2 slots for SSDs. [QNAP specifications](https://www.qnap.com/en-us/product/ts-264/specs/hardware/software)
+- **UGREEN NASync DXP2800** — A two-bay NAS for shared storage and backups. [UGREEN product page](https://www.ugreen.com/products/usa-25242)
+
+##### DIY
+
 - **TrueNAS Community Edition** — A free DIY option for a spare PC or a purpose-built NAS. It uses OpenZFS for storage pools and snapshots and can share files with your Docker hosts over the network. [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)
 - **openmediavault** — A free, Debian-based DIY option if you mainly want network file shares managed through a web interface. [openmediavault](https://www.openmediavault.org/)
+- **Unraid** — A paid option for reusing drives of different sizes and expanding one disk at a time. If you use parity, the parity drive must be at least as large as the largest data drive. [Unraid](https://unraid.net/product/) · [Array expansion docs](https://docs.unraid.net/unraid-os/using-unraid-to/manage-storage/array/adding-disks-to-array/)
+- **Debian + Samba** — A straightforward way to share files from a Linux machine you already keep running. You manage the disks and backups yourself. [Debian file-sharing guide](https://wiki.debian.org/Samba/ServerSimple)
 
 Keep a separate backup of anything you can't replace. A drive mirror helps if one drive fails, while a separate backup gives you another copy if files are deleted or the NAS itself is lost.
 
