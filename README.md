@@ -48,5 +48,3 @@ Last successful sync that changed this list (UTC) · 2026-11-06
 - **Shelf Elf Librarian** ([natsteff/shelf-elf-librarian](https://github.com/natsteff/shelf-elf-librarian)) — Shelf Elf Librarian — native macOS filename preparation and library filing alpha
 - **TagCraft** ([natsteff/TagCraft](https://github.com/natsteff/TagCraft)) — macOS MP3 tag editor and music library organizer with Magic, filename tools, playback, statistics and health reports. Currently in Beta.
 <!-- github-stars:end -->
-
-[See synchronization runs](https://github.com/natsteff/nates-recommendations/actions/workflows/sync-stars.yml) · [Maintenance](MAINTENANCE.md)
