@@ -43,7 +43,6 @@ Last successful sync that changed this list (UTC) · 2026-11-06
 ## Other GitHub Stars
 
 - **DOSee** ([bengarrett/DOSee](https://github.com/bengarrett/DOSee)) — DOSee is a DOSBox based, MS-DOS emulator for the web.
-- **Programmer’s Playing Cards** ([Bathlamos/programmers-playing-cards](https://github.com/Bathlamos/programmers-playing-cards)) — Play cards with style with this fancy programmer’s deck. 52 languages\!
 - **Scratch Map** ([ad3m3r5/scratch-map](https://github.com/ad3m3r5/scratch-map)) — An open-source scratch-off style map to track your travels.
 
 ## Shameless Self-Promotion

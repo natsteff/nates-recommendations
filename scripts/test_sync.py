@@ -24,8 +24,12 @@ class SyncTests(unittest.TestCase):
         self.assertNotIn("natsteff/own", recommendations)
 
     def test_excluded_repository_is_omitted_even_if_returned_as_public(self):
-        output = render([[repository("CodeForEauClaire/codeforeauclaire.github.io")]])
+        output = render([[
+            repository("CodeForEauClaire/codeforeauclaire.github.io"),
+            repository("Bathlamos/programmers-playing-cards"),
+        ]])
         self.assertNotIn("codeforeauclaire.github.io", output)
+        self.assertNotIn("programmers-playing-cards", output)
 
     def test_sort_by_product_name_with_canonical_spelling(self):
         output = render([[

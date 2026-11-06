@@ -11,7 +11,10 @@ START = "<!-- github-stars:start -->\n"
 END = "<!-- github-stars:end -->"
 README = Path(__file__).resolve().parents[1] / "README.md"
 ACCOUNT = "natsteff"
-EXCLUDED_REPOSITORIES = {"codeforeauclaire/codeforeauclaire.github.io"}
+EXCLUDED_REPOSITORIES = {
+    "bathlamos/programmers-playing-cards",
+    "codeforeauclaire/codeforeauclaire.github.io",
+}
 PRODUCT_NAMES = json.loads(Path(__file__).with_name("product-names.json").read_text(encoding="utf-8"))
 STAR_CATEGORIES = json.loads(Path(__file__).with_name("star-categories.json").read_text(encoding="utf-8"))
 CATEGORY_HEADINGS = {
