@@ -14,6 +14,7 @@ Last successful sync that changed this list (UTC) · 2026-11-06
 - **DOSee** ([bengarrett/DOSee](https://github.com/bengarrett/DOSee)) — DOSee is a DOSBox based, MS-DOS emulator for the web.
 - **ErsatzTV Legacy** ([ErsatzTV/legacy](https://github.com/ErsatzTV/legacy)) — Open-source platform that transforms your personal media library into live, custom TV channels.
 - **ErsatzTV Next** ([ErsatzTV/next](https://github.com/ErsatzTV/next)) — Transcode and stream your media as live TV channels.
+- **FORGE GameSheets**\* ([natsteff/forge-gamesheets](https://github.com/natsteff/forge-gamesheets)) — Self-hosted library for organizing, finding, and printing board-game resources.
 - **Glances** ([nicolargo/glances](https://github.com/nicolargo/glances)) — Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, macOS and Windows operating systems.
 - **Heimdall** ([linuxserver/Heimdall](https://github.com/linuxserver/Heimdall)) — An Application dashboard and launcher
 - **HomeBox** ([sysadminsmedia/homebox](https://github.com/sysadminsmedia/homebox)) — A continuation of HomeBox the inventory and organization system built for the Home User
@@ -39,13 +40,20 @@ Last successful sync that changed this list (UTC) · 2026-11-06
 - **What’s Up Docker?** ([getwud/wud](https://github.com/getwud/wud)) — Keep your containers up-to-date\!
 - **Yamtrack** ([FuzzyGrim/Yamtrack](https://github.com/FuzzyGrim/Yamtrack)) — A self hosted media tracker.
 
-## Shameless Self-Promotion
+## Desktop & Mobile Apps
 
-- **FGS Studio** ([natsteff/FGS-Studio](https://github.com/natsteff/FGS-Studio)) — A hosted alternative to FORGE GameSheets. Create and edit board game \(or similar\) game sheets in your browser and export them as FGS or PDF. No account required.
-- **FORGE GameSheets** ([natsteff/forge-gamesheets](https://github.com/natsteff/forge-gamesheets)) — Self-hosted library for organizing, finding, and printing board-game resources.
-- **Lil G in Eau Claire** ([natsteff/lil-g-in-eau-claire](https://github.com/natsteff/lil-g-in-eau-claire)) — Browser platformer starring Lil’ G, with mobile support using customizable controls. Dodge traffic &amp; unique characters to deliver a towering stack of beer across Eau Claire with selectable custom music soundtrack.
-- **SARGE Desktop** ([natsteff/SARGE-Desktop](https://github.com/natsteff/SARGE-Desktop)) — SARGE Desktop Beta: Windows photo inventory, offline catalogs, RAW/export matching and verified copy workflows. AGPL-3.0.
-- **Seth Happens\! A New Adventure** ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming across eight adventures.
-- **Shelf Elf Librarian** ([natsteff/shelf-elf-librarian](https://github.com/natsteff/shelf-elf-librarian)) — Shelf Elf Librarian — native macOS filename preparation and library filing alpha
-- **TagCraft** ([natsteff/TagCraft](https://github.com/natsteff/TagCraft)) — macOS MP3 tag editor and music library organizer with Magic, filename tools, playback, statistics and health reports. Currently in Beta.
+- **SARGE Desktop**\* ([natsteff/SARGE-Desktop](https://github.com/natsteff/SARGE-Desktop)) — SARGE Desktop Beta: Windows photo inventory, offline catalogs, RAW/export matching and verified copy workflows. AGPL-3.0.
+- **Shelf Elf Librarian**\* ([natsteff/shelf-elf-librarian](https://github.com/natsteff/shelf-elf-librarian)) — Shelf Elf Librarian — native macOS filename preparation and library filing alpha
+- **TagCraft**\* ([natsteff/TagCraft](https://github.com/natsteff/TagCraft)) — macOS MP3 tag editor and music library organizer with Magic, filename tools, playback, statistics and health reports. Currently in Beta.
+
+## Web Apps
+
+- **FGS Studio**\* ([natsteff/FGS-Studio](https://github.com/natsteff/FGS-Studio)) — A hosted alternative to FORGE GameSheets. Create and edit board game \(or similar\) game sheets in your browser and export them as FGS or PDF. No account required.
+
+## Browser Games
+
+- **Lil G in Eau Claire**\* ([natsteff/lil-g-in-eau-claire](https://github.com/natsteff/lil-g-in-eau-claire)) — Browser platformer starring Lil’ G, with mobile support using customizable controls. Dodge traffic &amp; unique characters to deliver a towering stack of beer across Eau Claire with selectable custom music soundtrack.
+- **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming across eight adventures.
+
+\* Shameless Self-Promotion
 <!-- github-stars:end -->

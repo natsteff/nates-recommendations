@@ -21,6 +21,7 @@
     "localsend/localsend",
     "louislam/uptime-kuma",
     "mattogodoy/nametag",
+    "natsteff/forge-gamesheets",
     "navidrome/navidrome",
     "nginx/nginx",
     "nicolargo/glances",
@@ -29,5 +30,17 @@
     "portainer/portainer",
     "rommapp/romm",
     "sysadminsmedia/homebox"
+  ],
+  "desktop": [
+    "natsteff/sarge-desktop",
+    "natsteff/shelf-elf-librarian",
+    "natsteff/tagcraft"
+  ],
+  "web": [
+    "natsteff/fgs-studio"
+  ],
+  "games": [
+    "natsteff/lil-g-in-eau-claire",
+    "natsteff/seth-happens-a-new-adventure"
   ]
 }

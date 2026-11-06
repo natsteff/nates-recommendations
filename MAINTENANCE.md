@@ -27,8 +27,8 @@ Each section sorts alphabetically by product name. Add canonical names to
 without a mapped name use a readable version of the repository name.
 
 Assign starred repositories to sections in `scripts/star-categories.json`. New
-stars without an assignment go to Other GitHub Stars. Account-owned stars go
-to Shameless Self-Promotion. For curated recommendations independent of stars,
+stars without an assignment go to Other GitHub Stars. Stars owned by Nate follow the same categories
+and receive an asterisk with a single Shameless Self-Promotion note. For curated recommendations independent of stars,
 use separate Markdown files or add content outside the generated markers.
 
 Keep the GitHub stars markers in README.md. The script replaces only the content

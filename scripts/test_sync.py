@@ -11,17 +11,16 @@ def repository(name, description="A summary", public=True):
 
 
 class SyncTests(unittest.TestCase):
-    def test_pages_visibility_links_summaries_and_owner_sections(self):
+    def test_pages_visibility_links_summaries_and_owner_marker(self):
         output = render([
             [repository("other/old", "[summary]<test>"), repository("other/private", public=False)],
             [repository("natsteff/own", None), repository("other/old", "[summary]<test>")],
         ])
-        recommendations, self_promotion = output.split("## Shameless Self-Promotion")
-        self.assertIn(r"**Old** ([other/old](https://github.com/other/old)) — \[summary\]&lt;test&gt;", recommendations)
+        self.assertIn(r"**Old** ([other/old](https://github.com/other/old)) — \[summary\]&lt;test&gt;", output)
         self.assertEqual(output.count("other/old)"), 1)
-        self.assertIn("**Own** ([natsteff/own](https://github.com/natsteff/own)) — No description provided.", self_promotion)
+        self.assertIn(r"**Own**\* ([natsteff/own](https://github.com/natsteff/own)) — No description provided.", output)
+        self.assertEqual(output.count(r"\* Shameless Self-Promotion"), 1)
         self.assertNotIn("private", output)
-        self.assertNotIn("natsteff/own", recommendations)
 
     def test_excluded_repository_is_omitted_even_if_returned_as_public(self):
         output = render([[
@@ -40,7 +39,7 @@ class SyncTests(unittest.TestCase):
             repository("natsteff/FGS-Studio"),
         ]])
         names = [line.split("**")[1] for line in output.splitlines() if line.startswith("- ")]
-        self.assertEqual(names, ["Glances", "MeTube", "What’s Up Docker?", "FGS Studio", "TagCraft"])
+        self.assertEqual(names, ["Glances", "MeTube", "What’s Up Docker?", "TagCraft", "FGS Studio"])
 
     def test_category_order_and_default_for_new_stars(self):
         output = render([[
@@ -53,11 +52,12 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(headings, [
             "## Homelab Recommendations",
             "### Docker & Self-Hosted Apps",
+            "## Desktop & Mobile Apps",
             "## Other GitHub Stars",
-            "## Shameless Self-Promotion",
         ])
         homelab, other = output.split("## Other GitHub Stars", 1)
         self.assertIn("**LocalSend**", homelab)
+        self.assertIn(r"**TagCraft**\*", homelab.split("## Desktop & Mobile Apps")[1])
         self.assertTrue(other.startswith("\n\n- **New Tool**"))
 
     def test_star_unstar_and_no_change(self):

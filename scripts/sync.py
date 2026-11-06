@@ -20,8 +20,9 @@ STAR_CATEGORIES = json.loads(Path(__file__).with_name("star-categories.json").re
 CATEGORY_HEADINGS = {
     "homelab": "## Homelab Recommendations\n\n### Docker & Self-Hosted Apps",
     "desktop": "## Desktop & Mobile Apps",
+    "web": "## Web Apps",
+    "games": "## Browser Games",
     "other": "## Other GitHub Stars",
-    "own": "## Shameless Self-Promotion",
 }
 
 
@@ -40,6 +41,7 @@ def markdown(text):
 
 def render(pages):
     entries = {}
+    has_own_projects = False
     categories = {name: key for key, names in STAR_CATEGORIES.items() for name in names}
     for page in pages:
         for repo in page:
@@ -53,18 +55,24 @@ def render(pages):
             summary = " ".join((repo["description"] or "").split())
             owner, slug = name.split("/")
             product = PRODUCT_NAMES.get(name.casefold(), re.sub(r"[-_]+", " ", slug).title())
-            line = f"- **{markdown(product)}** ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
-            category = "own" if owner.casefold() == ACCOUNT else categories.get(name.casefold(), "other")
+            own_project = owner.casefold() == ACCOUNT
+            has_own_projects |= own_project
+            marker = r"\*" if own_project else ""
+            line = f"- **{markdown(product)}**{marker} ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
+            category = categories.get(name.casefold(), "other")
             entries[name] = (product.casefold(), category, line)
     sections = {key: [] for key in CATEGORY_HEADINGS}
     for name in sorted(entries, key=lambda name: (entries[name][0], name.casefold())):
         _, category, line = entries[name]
         sections[category].append(line)
-    return "\n\n".join(
+    blocks = [
         heading + "\n\n" + "\n".join(sections[key])
         for key, heading in CATEGORY_HEADINGS.items()
         if sections[key]
-    ) or "_No public stars._"
+    ]
+    if has_own_projects:
+        blocks.append(r"\* Shameless Self-Promotion")
+    return "\n\n".join(blocks) or "_No public stars._"
 
 
 def update(readme, entries, today):
