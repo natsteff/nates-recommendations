@@ -1,8 +1,6 @@
 name: Sync GitHub recommendations
 
 on:
-  schedule:
-    - cron: '23 14 * * 1'
   workflow_dispatch:
 
 concurrency:

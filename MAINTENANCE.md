@@ -1,21 +1,24 @@
 # Maintenance
 
-GitHub Actions refreshes the GitHub recommendations on Mondays at 14:23 UTC.
-To refresh manually, open **Actions → Sync GitHub recommendations → Run workflow**
-and select the default branch. Successful runs with identical recommendations
-leave Git history alone. The README dates the last successful refresh that changed
-the list. Use the Actions run history for the date of a successful no-change check.
+The weekly refresh runs from Nate’s Codex chat on Mondays at 8:23 a.m.
+America/Chicago. It uses the existing GitHub CLI sign-in on Nate’s Mac,
+so the Mac and Codex need to be available. To refresh on demand, ask in the
+same chat or run `ACCOUNT_TOKEN=1 python3 scripts/sync.py` from a current
+default-branch checkout, then commit and push README.md if it changed.
 
-## Credentials
+The README dates the last successful refresh that changed the list.
+Successful checks with identical recommendations leave Git history alone.
 
-The workflow uses the built-in repository token for the named stars endpoint
-and to commit README updates. If GitHub hides the account’s stars from that
-token, create a fine-grained personal access token for `natsteff` with
-**Starring: Read-only** under user permissions. Limit repository access to
-public repositories and set an expiration. Store the token in **Settings →
-Secrets and variables → Actions** as `STARS_READ_TOKEN`, then run the workflow.
-This credential reads the account’s stars. The built-in token publishes changes.
-Rotate the account token before it expires. Keep its value out of files and logs.
+## Optional GitHub Actions refresh
+
+The GitHub workflow is manual only. To use it, create a fine-grained
+personal access token for `natsteff` with **Starring: Read-only** under user
+permissions, limit repository access to public repositories, and set an
+expiration. Store it as `STARS_READ_TOKEN` in **Settings → Secrets and
+variables → Actions**. Open **Actions → Sync GitHub recommendations →
+Run workflow** and select the default branch. The built-in workflow token
+publishes changes. Keep the account token out of files and logs.
+The local Codex refresh uses the GitHub CLI sign-in and requires no Actions secret.
 
 ## Editing the collection
 
