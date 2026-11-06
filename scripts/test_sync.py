@@ -50,7 +50,6 @@ class SyncTests(unittest.TestCase):
         ]])
         headings = [line for line in output.splitlines() if line.startswith("##")]
         self.assertEqual(headings, [
-            "## Homelab Recommendations",
             "### Docker & Self-Hosted Apps",
             "## Desktop & Mobile Apps",
             "## Other GitHub Stars",
@@ -61,13 +60,14 @@ class SyncTests(unittest.TestCase):
         self.assertTrue(other.startswith("\n\n- **New Tool**"))
 
     def test_star_unstar_and_no_change(self):
-        readme = f"# Title\n{START}Pending\n{END}\n## Another category\n"
+        readme = f"# Title\n## Homelab Recommendations\n### Infrastructure\n- Curated item\n{START}Pending\n{END}\n## Another category\n"
         original = update(readme, render([[repository("other/old")]]), "2026-11-06")
         new_entries = render([[repository("other/new")]])
         updated = update(original, new_entries, "2026-11-07")
         self.assertNotIn("other/old", updated)
         self.assertIn("other/new", updated)
         self.assertIn("2026-11-07", updated)
+        self.assertIn("- Curated item", updated)
         self.assertTrue(updated.endswith("## Another category\n"))
         self.assertEqual(update(updated, new_entries, "2026-11-08"), updated)
 

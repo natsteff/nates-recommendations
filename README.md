@@ -1,11 +1,15 @@
 # Nate's Recommendations
 
-A collection of things I recommend. The lists below start with public repositories I’ve starred on GitHub.
+A collection of things I recommend, including public repositories I’ve starred on GitHub.
+
+## Homelab Recommendations
+
+### Infrastructure
+
+- **Proxmox Virtual Environment (VE)** ([official ISO downloads](https://www.proxmox.com/en/downloads/proxmox-virtual-environment)) — Run KVM virtual machines and LXC containers from a web interface. Proxmox VE is open source under AGPLv3 and free to download and use for a personal homelab without a subscription. The no-subscription update repository is available for non-production use. Proxmox’s paid Community subscription adds access to the Enterprise Repository. [Installation and licensing](https://proxmox.com/en/products/proxmox-virtual-environment/get-started) · [Update repositories](https://pve.proxmox.com/pve-docs/chapter-sysadmin.html#sysadmin_package_repositories) · [Subscriptions](https://www.proxmox.com/en/?id=23)
 
 <!-- github-stars:start -->
 Last successful sync that changed this list (UTC) · 2026-11-06
-
-## Homelab Recommendations
 
 ### Docker & Self-Hosted Apps
 
