@@ -11,6 +11,7 @@ START = "<!-- github-stars:start -->\n"
 END = "<!-- github-stars:end -->"
 README = Path(__file__).resolve().parents[1] / "README.md"
 ACCOUNT = "natsteff"
+PRODUCT_NAMES = json.loads(Path(__file__).with_name("product-names.json").read_text(encoding="utf-8"))
 
 
 def github(*args):
@@ -20,6 +21,10 @@ def github(*args):
     if result.returncode:
         raise SystemExit("GitHub API request failed. Check the workflow credential and retry.")
     return json.loads(result.stdout)
+
+
+def markdown(text):
+    return re.sub(r"([!\[\]()*_`~\\])", r"\\\1", html.escape(text))
 
 
 def render(pages):
@@ -32,12 +37,13 @@ def render(pages):
             if not re.fullmatch(r"[A-Za-z0-9-]+/[A-Za-z0-9_.-]+", name):
                 raise ValueError("Unexpected public repository name")
             summary = " ".join((repo["description"] or "").split())
-            # Escape Markdown punctuation and HTML in repository-supplied text.
-            summary = re.sub(r"([!\[\]()*_`~\\])", r"\\\1", html.escape(summary))
-            entries[name] = f"- [`{name}`](https://github.com/{name}) — {summary or 'No description provided.'}"
-    ordered = sorted(entries, key=str.casefold)
-    recommendations = [entries[name] for name in ordered if name.split("/")[0].lower() != ACCOUNT]
-    own = [entries[name] for name in ordered if name.split("/")[0].lower() == ACCOUNT]
+            owner, slug = name.split("/")
+            product = PRODUCT_NAMES.get(name.casefold(), re.sub(r"[-_]+", " ", slug).title())
+            line = f"- **{markdown(product)}** ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
+            entries[name] = (product.casefold(), owner.casefold() == ACCOUNT, line)
+    ordered = sorted(entries, key=lambda name: (entries[name][0], name.casefold()))
+    recommendations = [entries[name][2] for name in ordered if not entries[name][1]]
+    own = [entries[name][2] for name in ordered if entries[name][1]]
     return "\n".join([
         *(recommendations or ["_No public stars from other owners._"]),
         "", "### Shameless Self-Promotion", "",

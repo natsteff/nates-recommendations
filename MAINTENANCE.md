@@ -22,6 +22,10 @@ The local Codex refresh uses the GitHub CLI sign-in and requires no Actions secr
 
 ## Editing the collection
 
+Each section sorts alphabetically by product name. Add canonical names to
+`scripts/product-names.json` using lowercase `owner/repository` keys. New stars
+without a mapped name use a readable version of the repository name.
+
 Keep the GitHub stars markers in README.md. The script replaces only the content
 between those markers after a successful paginated fetch. Other categories can
 use separate Markdown files linked from the README.

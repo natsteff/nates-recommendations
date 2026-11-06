@@ -17,11 +17,22 @@ class SyncTests(unittest.TestCase):
             [repository("natsteff/own", None), repository("other/old", "[summary]<test>")],
         ])
         recommendations, self_promotion = output.split("### Shameless Self-Promotion")
-        self.assertIn(r"[`other/old`](https://github.com/other/old) — \[summary\]&lt;test&gt;", recommendations)
+        self.assertIn(r"**Old** ([other/old](https://github.com/other/old)) — \[summary\]&lt;test&gt;", recommendations)
         self.assertEqual(output.count("other/old)"), 1)
-        self.assertIn("[`natsteff/own`](https://github.com/natsteff/own) — No description provided.", self_promotion)
+        self.assertIn("**Own** ([natsteff/own](https://github.com/natsteff/own)) — No description provided.", self_promotion)
         self.assertNotIn("private", output)
         self.assertNotIn("natsteff/own", recommendations)
+
+    def test_sort_by_product_name_with_canonical_spelling(self):
+        output = render([[
+            repository("getwud/wud"),
+            repository("nicolargo/glances"),
+            repository("alexta69/metube"),
+            repository("natsteff/tagcraft"),
+            repository("natsteff/FGS-Studio"),
+        ]])
+        names = [line.split("**")[1] for line in output.splitlines() if line.startswith("- ")]
+        self.assertEqual(names, ["Glances", "MeTube", "What’s Up Docker?", "FGS Studio", "TagCraft"])
 
     def test_star_unstar_and_no_change(self):
         readme = f"# Title\n{START}Pending\n{END}\n## Another category\n"
