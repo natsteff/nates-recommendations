@@ -53,11 +53,12 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(headings, [
             "## Homelab Recommendations",
             "### Docker & Self-Hosted Apps",
-            "## Desktop & Mobile Apps",
             "## Other GitHub Stars",
             "## Shameless Self-Promotion",
         ])
-        self.assertIn("## Other GitHub Stars\n\n- **New Tool**", output)
+        homelab, other = output.split("## Other GitHub Stars", 1)
+        self.assertIn("**LocalSend**", homelab)
+        self.assertTrue(other.startswith("\n\n- **New Tool**"))
 
     def test_star_unstar_and_no_change(self):
         readme = f"# Title\n{START}Pending\n{END}\n## Another category\n"

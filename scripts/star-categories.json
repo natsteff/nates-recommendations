@@ -1,7 +1,9 @@
 {
   "homelab": [
+    "ad3m3r5/scratch-map",
     "advplyr/audiobookshelf",
     "alexta69/metube",
+    "bengarrett/dosee",
     "brandawg93/peanut",
     "dockpeek/dockpeek",
     "ellite/wallos",
@@ -16,6 +18,7 @@
     "karakeep-app/karakeep",
     "kareadita/kavita",
     "linuxserver/heimdall",
+    "localsend/localsend",
     "louislam/uptime-kuma",
     "mattogodoy/nametag",
     "navidrome/navidrome",
@@ -26,8 +29,5 @@
     "portainer/portainer",
     "rommapp/romm",
     "sysadminsmedia/homebox"
-  ],
-  "desktop": [
-    "localsend/localsend"
   ]
 }
