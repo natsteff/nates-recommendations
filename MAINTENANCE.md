@@ -26,6 +26,11 @@ Each section sorts alphabetically by product name. Add canonical names to
 `scripts/product-names.json` using lowercase `owner/repository` keys. New stars
 without a mapped name use a readable version of the repository name.
 
+Assign starred repositories to sections in `scripts/star-categories.json`. New
+stars without an assignment go to Other GitHub Stars. Account-owned stars go
+to Shameless Self-Promotion. For curated recommendations independent of stars,
+use separate Markdown files or add content outside the generated markers.
+
 Keep the GitHub stars markers in README.md. The script replaces only the content
 between those markers after a successful paginated fetch. Other categories can
 use separate Markdown files linked from the README.

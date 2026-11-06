@@ -16,7 +16,7 @@ class SyncTests(unittest.TestCase):
             [repository("other/old", "[summary]<test>"), repository("other/private", public=False)],
             [repository("natsteff/own", None), repository("other/old", "[summary]<test>")],
         ])
-        recommendations, self_promotion = output.split("### Shameless Self-Promotion")
+        recommendations, self_promotion = output.split("## Shameless Self-Promotion")
         self.assertIn(r"**Old** ([other/old](https://github.com/other/old)) — \[summary\]&lt;test&gt;", recommendations)
         self.assertEqual(output.count("other/old)"), 1)
         self.assertIn("**Own** ([natsteff/own](https://github.com/natsteff/own)) — No description provided.", self_promotion)
@@ -37,6 +37,23 @@ class SyncTests(unittest.TestCase):
         ]])
         names = [line.split("**")[1] for line in output.splitlines() if line.startswith("- ")]
         self.assertEqual(names, ["Glances", "MeTube", "What’s Up Docker?", "FGS Studio", "TagCraft"])
+
+    def test_category_order_and_default_for_new_stars(self):
+        output = render([[
+            repository("unmapped/new-tool"),
+            repository("localsend/localsend"),
+            repository("jellyfin/jellyfin"),
+            repository("natsteff/tagcraft"),
+        ]])
+        headings = [line for line in output.splitlines() if line.startswith("##")]
+        self.assertEqual(headings, [
+            "## Homelab Recommendations",
+            "### Docker & Self-Hosted Apps",
+            "## Desktop & Mobile Apps",
+            "## Other GitHub Stars",
+            "## Shameless Self-Promotion",
+        ])
+        self.assertIn("## Other GitHub Stars\n\n- **New Tool**", output)
 
     def test_star_unstar_and_no_change(self):
         readme = f"# Title\n{START}Pending\n{END}\n## Another category\n"

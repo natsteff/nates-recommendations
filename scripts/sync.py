@@ -13,6 +13,13 @@ README = Path(__file__).resolve().parents[1] / "README.md"
 ACCOUNT = "natsteff"
 EXCLUDED_REPOSITORIES = {"codeforeauclaire/codeforeauclaire.github.io"}
 PRODUCT_NAMES = json.loads(Path(__file__).with_name("product-names.json").read_text(encoding="utf-8"))
+STAR_CATEGORIES = json.loads(Path(__file__).with_name("star-categories.json").read_text(encoding="utf-8"))
+CATEGORY_HEADINGS = {
+    "homelab": "## Homelab Recommendations\n\n### Docker & Self-Hosted Apps",
+    "desktop": "## Desktop & Mobile Apps",
+    "other": "## Other GitHub Stars",
+    "own": "## Shameless Self-Promotion",
+}
 
 
 def github(*args):
@@ -30,6 +37,7 @@ def markdown(text):
 
 def render(pages):
     entries = {}
+    categories = {name: key for key, names in STAR_CATEGORIES.items() for name in names}
     for page in pages:
         for repo in page:
             if repo.get("private") is not False or repo.get("visibility") != "public":
@@ -43,15 +51,17 @@ def render(pages):
             owner, slug = name.split("/")
             product = PRODUCT_NAMES.get(name.casefold(), re.sub(r"[-_]+", " ", slug).title())
             line = f"- **{markdown(product)}** ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
-            entries[name] = (product.casefold(), owner.casefold() == ACCOUNT, line)
-    ordered = sorted(entries, key=lambda name: (entries[name][0], name.casefold()))
-    recommendations = [entries[name][2] for name in ordered if not entries[name][1]]
-    own = [entries[name][2] for name in ordered if entries[name][1]]
-    return "\n".join([
-        *(recommendations or ["_No public stars from other owners._"]),
-        "", "### Shameless Self-Promotion", "",
-        *(own or ["_No public stars from my own repositories._"]),
-    ])
+            category = "own" if owner.casefold() == ACCOUNT else categories.get(name.casefold(), "other")
+            entries[name] = (product.casefold(), category, line)
+    sections = {key: [] for key in CATEGORY_HEADINGS}
+    for name in sorted(entries, key=lambda name: (entries[name][0], name.casefold())):
+        _, category, line = entries[name]
+        sections[category].append(line)
+    return "\n\n".join(
+        heading + "\n\n" + "\n".join(sections[key])
+        for key, heading in CATEGORY_HEADINGS.items()
+        if sections[key]
+    ) or "_No public stars._"
 
 
 def update(readme, entries, today):

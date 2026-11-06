@@ -1,0 +1,33 @@
+{
+  "homelab": [
+    "advplyr/audiobookshelf",
+    "alexta69/metube",
+    "brandawg93/peanut",
+    "dockpeek/dockpeek",
+    "ellite/wallos",
+    "ersatztv/legacy",
+    "ersatztv/next",
+    "fuzzygrim/yamtrack",
+    "getwud/wud",
+    "gnmyt/myspeed",
+    "go-vikunja/vikunja",
+    "immich-app/immich",
+    "jellyfin/jellyfin",
+    "karakeep-app/karakeep",
+    "kareadita/kavita",
+    "linuxserver/heimdall",
+    "louislam/uptime-kuma",
+    "mattogodoy/nametag",
+    "navidrome/navidrome",
+    "nginx/nginx",
+    "nicolargo/glances",
+    "paperless-ngx/paperless-ngx",
+    "pi-hole/pi-hole",
+    "portainer/portainer",
+    "rommapp/romm",
+    "sysadminsmedia/homebox"
+  ],
+  "desktop": [
+    "localsend/localsend"
+  ]
+}
