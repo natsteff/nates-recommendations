@@ -64,6 +64,7 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 - **Paperless-ngx** ([paperless-ngx/paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)) — A community-supported supercharged document management system: scan, index and archive all your documents
 - **PeaNUT** ([Brandawg93/PeaNUT](https://github.com/Brandawg93/PeaNUT)) — A tiny dashboard for Network UPS Tools
 - **Pi-hole** ([pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)) — A black hole for Internet advertisements
+- **Plex Media Server** ([plexinc/pms-docker](https://github.com/plexinc/pms-docker)) — Organize your personal media library and stream it to Plex apps. This is Plex’s official Docker image repository and setup guide.
 - **Portainer** ([portainer/portainer](https://github.com/portainer/portainer)) — Making Docker and Kubernetes management easy.
 - **RomM** ([rommapp/romm](https://github.com/rommapp/romm)) — A beautiful, powerful, self-hosted ROM manager and player.
 - **Scratch Map** ([ad3m3r5/scratch-map](https://github.com/ad3m3r5/scratch-map)) — An open-source scratch-off style map to track your travels.
@@ -90,5 +91,5 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-06
+Last successful sync that changed this list (UTC) · 2026-11-07
 <!-- github-stars:end -->

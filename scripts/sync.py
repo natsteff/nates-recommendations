@@ -40,7 +40,15 @@ def markdown(text):
 
 
 def render(pages):
-    entries = {}
+    entries = {
+        "plexinc/pms-docker": (
+            "plex media server",
+            "homelab",
+            "- **Plex Media Server** ([plexinc/pms-docker](https://github.com/plexinc/pms-docker))"
+            " — Organize your personal media library and stream it to Plex apps."
+            " This is Plex’s official Docker image repository and setup guide.",
+        ),
+    }
     has_own_projects = False
     categories = {name: key for key, names in STAR_CATEGORIES.items() for name in names}
     for page in pages:
@@ -48,7 +56,8 @@ def render(pages):
             if repo.get("private") is not False or repo.get("visibility") != "public":
                 continue
             name = repo["full_name"]
-            if name.casefold() in EXCLUDED_REPOSITORIES:
+            key = name.casefold()
+            if key in EXCLUDED_REPOSITORIES or key in entries:
                 continue
             if not re.fullmatch(r"[A-Za-z0-9-]+/[A-Za-z0-9_.-]+", name):
                 raise ValueError("Unexpected public repository name")
@@ -60,7 +69,7 @@ def render(pages):
             marker = r"\*" if own_project else ""
             line = f"- **{markdown(product)}**{marker} ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
             category = categories.get(name.casefold(), "other")
-            entries[name] = (product.casefold(), category, line)
+            entries[key] = (product.casefold(), category, line)
     sections = {key: [] for key in CATEGORY_HEADINGS}
     for name in sorted(entries, key=lambda name: (entries[name][0], name.casefold())):
         _, category, line = entries[name]

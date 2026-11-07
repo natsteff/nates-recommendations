@@ -39,7 +39,7 @@ class SyncTests(unittest.TestCase):
             repository("natsteff/FGS-Studio"),
         ]])
         names = [line.split("**")[1] for line in output.splitlines() if line.startswith("- ")]
-        self.assertEqual(names, ["Glances", "MeTube", "What’s Up Docker?", "TagCraft", "FGS Studio"])
+        self.assertEqual(names, ["Glances", "MeTube", "Plex Media Server", "What’s Up Docker?", "TagCraft", "FGS Studio"])
 
     def test_category_order_and_default_for_new_stars(self):
         output = render([[
@@ -71,5 +71,8 @@ class SyncTests(unittest.TestCase):
         self.assertTrue(updated.endswith("## Another category\n"))
         self.assertEqual(update(updated, new_entries, "2026-11-08"), updated)
 
-    def test_empty_account_list_removes_old_entries(self):
-        self.assertIn("No public stars", render([[]]))
+    def test_plex_stays_listed_without_a_star_and_is_not_duplicated(self):
+        no_stars = render([[]])
+        self.assertIn("## Docker & Self-Hosted Apps", no_stars)
+        self.assertIn("https://github.com/plexinc/pms-docker", no_stars)
+        self.assertEqual(no_stars, render([[repository("plexinc/pms-docker")]]))
