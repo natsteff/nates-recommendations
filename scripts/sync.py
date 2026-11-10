@@ -48,8 +48,14 @@ def render(pages):
             " — Organize your personal media library and stream it to Plex apps."
             " This is Plex’s official Docker image repository and setup guide.",
         ),
+        "natsteff/foxvex": (
+            "foxvex",
+            "games",
+            r"- **FoxVex**\* ([natsteff/foxvex](https://github.com/natsteff/foxvex))"
+            " — A TetraVex-style puzzle for desktop and mobile browsers."
+            " Match the numbers on adjacent tile edges.",
+        ),
     }
-    has_own_projects = False
     categories = {name: key for key, names in STAR_CATEGORIES.items() for name in names}
     for page in pages:
         for repo in page:
@@ -65,7 +71,6 @@ def render(pages):
             owner, slug = name.split("/")
             product = PRODUCT_NAMES.get(name.casefold(), re.sub(r"[-_]+", " ", slug).title())
             own_project = owner.casefold() == ACCOUNT
-            has_own_projects |= own_project
             marker = r"\*" if own_project else ""
             line = f"- **{markdown(product)}**{marker} ([{name}](https://github.com/{name})) — {markdown(summary) or 'No description provided.'}"
             category = categories.get(name.casefold(), "other")
@@ -79,7 +84,7 @@ def render(pages):
         for key, heading in CATEGORY_HEADINGS.items()
         if sections[key]
     ]
-    if has_own_projects:
+    if any(name.startswith(f"{ACCOUNT}/") for name in entries):
         blocks.append(r"\* Shameless Self-Promotion")
     return "\n\n".join(blocks) or "_No public stars._"
 

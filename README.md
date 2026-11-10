@@ -86,10 +86,11 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 
 ## Browser Games
 
+- **FoxVex**\* ([natsteff/foxvex](https://github.com/natsteff/foxvex)) — A TetraVex-style puzzle for desktop and mobile browsers. Match the numbers on adjacent tile edges.
 - **Lil G in Eau Claire**\* ([natsteff/lil-g-in-eau-claire](https://github.com/natsteff/lil-g-in-eau-claire)) — Browser platformer starring Lil’ G, with mobile support using customizable controls. Dodge traffic &amp; unique characters to deliver a towering stack of beer across Eau Claire with selectable custom music soundtrack.
-- **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming across eight adventures.
+- **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming with 12 adventures \(levels\), plus a bonus view-only Finale level.
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-07
+Last successful sync that changed this list (UTC) · 2026-11-10
 <!-- github-stars:end -->

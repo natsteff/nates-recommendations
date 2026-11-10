@@ -39,7 +39,7 @@ class SyncTests(unittest.TestCase):
             repository("natsteff/FGS-Studio"),
         ]])
         names = [line.split("**")[1] for line in output.splitlines() if line.startswith("- ")]
-        self.assertEqual(names, ["Glances", "MeTube", "Plex Media Server", "What’s Up Docker?", "TagCraft", "FGS Studio"])
+        self.assertEqual(names, ["Glances", "MeTube", "Plex Media Server", "What’s Up Docker?", "TagCraft", "FGS Studio", "FoxVex"])
 
     def test_category_order_and_default_for_new_stars(self):
         output = render([[
@@ -52,6 +52,7 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(headings, [
             "## Docker & Self-Hosted Apps",
             "## Desktop & Mobile Apps",
+            "## Browser Games",
             "## Other GitHub Stars",
         ])
         homelab, other = output.split("## Other GitHub Stars", 1)
@@ -71,8 +72,12 @@ class SyncTests(unittest.TestCase):
         self.assertTrue(updated.endswith("## Another category\n"))
         self.assertEqual(update(updated, new_entries, "2026-11-08"), updated)
 
-    def test_plex_stays_listed_without_a_star_and_is_not_duplicated(self):
+    def test_curated_entries_stay_listed_without_stars_and_are_not_duplicated(self):
         no_stars = render([[]])
         self.assertIn("## Docker & Self-Hosted Apps", no_stars)
         self.assertIn("https://github.com/plexinc/pms-docker", no_stars)
-        self.assertEqual(no_stars, render([[repository("plexinc/pms-docker")]]))
+        self.assertIn(r"## Browser Games" + "\n\n" + r"- **FoxVex**\*", no_stars)
+        self.assertEqual(no_stars, render([[
+            repository("plexinc/pms-docker"),
+            repository("natsteff/foxvex"),
+        ]]))
