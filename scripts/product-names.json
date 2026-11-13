@@ -34,5 +34,6 @@
   "pi-hole/pi-hole": "Pi-hole",
   "portainer/portainer": "Portainer",
   "rommapp/romm": "RomM",
-  "sysadminsmedia/homebox": "HomeBox"
+  "sysadminsmedia/homebox": "HomeBox",
+  "natsteff/unicorntunes": "UnicornTunes"
 }

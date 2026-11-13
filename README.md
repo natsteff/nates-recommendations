@@ -68,6 +68,7 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 - **Portainer** ([portainer/portainer](https://github.com/portainer/portainer)) — Making Docker and Kubernetes management easy.
 - **RomM** ([rommapp/romm](https://github.com/rommapp/romm)) — A beautiful, powerful, self-hosted ROM manager and player.
 - **Scratch Map** ([ad3m3r5/scratch-map](https://github.com/ad3m3r5/scratch-map)) — An open-source scratch-off style map to track your travels.
+- **UnicornTunes**\* ([natsteff/unicorntunes](https://github.com/natsteff/unicorntunes)) — Self-hosted Spotify request queue with anonymous guest search and voting
 - **Uptime Kuma** ([louislam/uptime-kuma](https://github.com/louislam/uptime-kuma)) — A fancy self-hosted monitoring tool
 - **Vikunja** ([go-vikunja/vikunja](https://github.com/go-vikunja/vikunja)) — The task manager you actually own.
 - **Wallos** ([ellite/Wallos](https://github.com/ellite/Wallos)) — Wallos: Open-source, self-hostable personal subscription tracker. Visualize your recurring expenses, manage your budget, and save money.
@@ -92,5 +93,5 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-10
+Last successful sync that changed this list (UTC) · 2026-11-13
 <!-- github-stars:end -->

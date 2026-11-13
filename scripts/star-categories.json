@@ -29,7 +29,8 @@
     "pi-hole/pi-hole",
     "portainer/portainer",
     "rommapp/romm",
-    "sysadminsmedia/homebox"
+    "sysadminsmedia/homebox",
+    "natsteff/unicorntunes"
   ],
   "desktop": [
     "natsteff/sarge-desktop",
