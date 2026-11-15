@@ -18,11 +18,11 @@ EXCLUDED_REPOSITORIES = {
 PRODUCT_NAMES = json.loads(Path(__file__).with_name("product-names.json").read_text(encoding="utf-8"))
 STAR_CATEGORIES = json.loads(Path(__file__).with_name("star-categories.json").read_text(encoding="utf-8"))
 CATEGORY_HEADINGS = {
-    "homelab": "## Docker & Self-Hosted Apps",
-    "desktop": "## Desktop & Mobile Apps",
-    "web": "## Web Apps",
-    "games": "## Browser Games",
-    "other": "## Other GitHub Stars",
+    "homelab": '<a id="docker-apps"></a>\n\n## Docker & Self-Hosted Apps',
+    "desktop": '<a id="desktop-apps"></a>\n\n## Desktop & Mobile Apps',
+    "web": '<a id="web-apps"></a>\n\n## Web Apps',
+    "games": '<a id="browser-games"></a>\n\n## Browser Games',
+    "other": '<a id="other-stars"></a>\n\n## Other GitHub Stars',
 }
 
 

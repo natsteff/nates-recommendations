@@ -2,7 +2,16 @@
 
 A collection of things I recommend, including public repositories I’ve starred on GitHub.
 
+
+## Jump to a section
+
+[Homelab infrastructure](#infrastructure) · [Docker host hardware](#hardware) · [Retail NAS](#nas-retail) · [DIY NAS](#nas-diy) · [Docker & Self-Hosted Apps](#docker-apps) · [Desktop & Mobile Apps](#desktop-apps) · [Web Apps](#web-apps) · [Browser Games](#browser-games)
+
+<a id="homelab"></a>
+
 ## Homelab Recommendations
+
+<a id="infrastructure"></a>
 
 ### Infrastructure
 
@@ -11,6 +20,8 @@ A collection of things I recommend, including public repositories I’ve starred
 - **Proxmox Virtual Environment (VE)** ([official ISO downloads](https://www.proxmox.com/en/downloads/proxmox-virtual-environment)) — Run KVM virtual machines and LXC containers from a web interface. Proxmox VE is open source under AGPLv3 and free to download and use for a personal homelab without a subscription. The no-subscription update repository is available for non-production use. Proxmox’s paid Community subscription adds access to the Enterprise Repository. [Installation and licensing](https://proxmox.com/en/products/proxmox-virtual-environment/get-started) · [Update repositories](https://pve.proxmox.com/pve-docs/chapter-sysadmin.html#sysadmin_package_repositories) · [Subscriptions](https://www.proxmox.com/en/?id=23)
 
   **Why use a VM for Docker?** You can run Docker on bare metal, but even for a single Docker host, running it in a Proxmox VM makes backup and recovery easier. Proxmox can schedule backups of the VM’s configuration and included virtual disks, then restore them together so you don’t have to rebuild the Docker host by hand. [Proxmox backup and restore](https://pve.proxmox.com/pve-docs/chapter-vzdump.html)
+
+<a id="hardware"></a>
 
 ## Docker Host and NAS (Network Attached Storage) Hardware
 
@@ -24,11 +35,15 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 
 **A NAS makes modest hosts more capable.** Keep media libraries, documents, backups, and other large datasets on network storage. Local disk space is still useful for the operating system, container images, databases, and performance-sensitive app data. That split lets a mini PC with a small internal drive run services that use much larger datasets.
 
+<a id="nas-retail"></a>
+
 ### NAS - Retail Solutions
 
 - **Synology DiskStation DS225+** — A compact two-bay NAS for shared files, media, and backups. The [diskless model](https://a.co/d/06WDfLj9) lets you choose your own compatible drives. The [16 TB bundle](https://a.co/d/0htiYQk6) comes with two 8 TB Seagate IronWolf drives. That's 16 TB of raw capacity, or roughly 8 TB before formatting overhead if you mirror the two drives. [Synology specs and drive compatibility](https://www.synology.com/en-us/products/DS225%2B)
 - **QNAP TS-264** — A two-bay NAS with two 2.5GbE ports and two M.2 slots for SSDs. [QNAP specifications](https://www.qnap.com/en-us/product/ts-264/specs/hardware/software)
 - **UGREEN NASync DXP2800** — A two-bay NAS for shared storage and backups. [UGREEN product page](https://www.ugreen.com/products/usa-25242)
+
+<a id="nas-diy"></a>
 
 ### NAS - DIY
 
@@ -40,6 +55,8 @@ Docker can run on a compact mini PC, a refurbished desktop, an old gaming rig, o
 Keep a separate backup of anything you can't replace. A drive mirror helps if one drive fails, while a separate backup gives you another copy if files are deleted or the NAS itself is lost.
 
 <!-- github-stars:start -->
+<a id="docker-apps"></a>
+
 ## Docker & Self-Hosted Apps
 
 - **Audiobookshelf** ([advplyr/audiobookshelf](https://github.com/advplyr/audiobookshelf)) — Self-hosted audiobook and podcast server
@@ -75,23 +92,30 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 - **What’s Up Docker?** ([getwud/wud](https://github.com/getwud/wud)) — Keep your containers up-to-date\!
 - **Yamtrack** ([FuzzyGrim/Yamtrack](https://github.com/FuzzyGrim/Yamtrack)) — A self hosted media tracker.
 
+<a id="desktop-apps"></a>
+
 ## Desktop & Mobile Apps
 
 - **SARGE Desktop**\* ([natsteff/SARGE-Desktop](https://github.com/natsteff/SARGE-Desktop)) — SARGE Desktop Beta: Windows photo inventory, offline catalogs, RAW/export matching and verified copy workflows. AGPL-3.0.
 - **Shelf Elf Librarian**\* ([natsteff/shelf-elf-librarian](https://github.com/natsteff/shelf-elf-librarian)) — Shelf Elf Librarian — native macOS filename preparation and library filing alpha
 - **TagCraft**\* ([natsteff/TagCraft](https://github.com/natsteff/TagCraft)) — macOS MP3 tag editor and music library organizer with Magic, filename tools, playback, statistics and health reports. Currently in Beta.
 
+<a id="web-apps"></a>
+
 ## Web Apps
 
 - **FGS Studio**\* ([natsteff/FGS-Studio](https://github.com/natsteff/FGS-Studio)) — A hosted alternative to FORGE GameSheets. Create and edit board game \(or similar\) game sheets in your browser and export them as FGS or PDF. No account required.
+
+<a id="browser-games"></a>
 
 ## Browser Games
 
 - **FoxVex**\* ([natsteff/foxvex](https://github.com/natsteff/foxvex)) — A TetraVex-style puzzle for desktop and mobile browsers. Match the numbers on adjacent tile edges.
 - **Lil G in Eau Claire**\* ([natsteff/lil-g-in-eau-claire](https://github.com/natsteff/lil-g-in-eau-claire)) — Browser platformer starring Lil’ G, with mobile support using customizable controls. Dodge traffic &amp; unique characters to deliver a towering stack of beer across Eau Claire with selectable custom music soundtrack.
+- **QuizTrekker - US States**\* ([natsteff/quiztrekker-us-states](https://github.com/natsteff/quiztrekker-us-states)) — QuizTrekker - US States: mobile-first geography flashcards and games for all 50 U.S. states.
 - **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: early alpha arcade platforming with 12 adventures \(levels\), plus a bonus view-only Finale level.
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-13
+Last successful sync that changed this list (UTC) · 2026-11-15
 <!-- github-stars:end -->
