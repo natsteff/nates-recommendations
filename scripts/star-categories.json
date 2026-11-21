@@ -38,7 +38,8 @@
     "natsteff/tagcraft"
   ],
   "web": [
-    "natsteff/fgs-studio"
+    "natsteff/fgs-studio",
+    "natsteff/the-last-witness-companion"
   ],
   "games": [
     "natsteff/lil-g-in-eau-claire",
