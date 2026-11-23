@@ -105,7 +105,7 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 ## Web Apps
 
 - **FGS Studio**\* ([natsteff/FGS-Studio](https://github.com/natsteff/FGS-Studio)) — A hosted alternative to FORGE GameSheets. Create and edit board game \(or similar\) game sheets in your browser and export them as FGS or PDF. No account required.
-- **The Last Witness Companion**\* ([natsteff/the-last-witness-companion](https://github.com/natsteff/the-last-witness-companion)) — Sally’s Detective Notebook, the reading companion to The Last Witness
+- **The Blue Staircase Companion**\* ([natsteff/the-blue-staircase-companion](https://github.com/natsteff/the-blue-staircase-companion)) — Sally’s Detective Notebook, the reading companion to The Blue Staircase
 
 <a id="browser-games"></a>
 
@@ -118,5 +118,5 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-21
+Last successful sync that changed this list (UTC) · 2026-11-23
 <!-- github-stars:end -->

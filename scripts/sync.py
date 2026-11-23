@@ -68,6 +68,9 @@ def render(pages):
             if not re.fullmatch(r"[A-Za-z0-9-]+/[A-Za-z0-9_.-]+", name):
                 raise ValueError("Unexpected public repository name")
             summary = " ".join((repo["description"] or "").split())
+            # Owner-confirmed book rename; GitHub metadata may lag behind.
+            if key == "natsteff/the-blue-staircase-companion":
+                summary = summary.replace("The Last Witness", "The Blue Staircase")
             owner, slug = name.split("/")
             product = PRODUCT_NAMES.get(name.casefold(), re.sub(r"[-_]+", " ", slug).title())
             own_project = owner.casefold() == ACCOUNT
