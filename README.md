@@ -114,9 +114,10 @@ Keep a separate backup of anything you can't replace. A drive mirror helps if on
 - **FoxVex**\* ([natsteff/foxvex](https://github.com/natsteff/foxvex)) — A TetraVex-style puzzle for desktop and mobile browsers. Match the numbers on adjacent tile edges.
 - **Lil G in Eau Claire**\* ([natsteff/lil-g-in-eau-claire](https://github.com/natsteff/lil-g-in-eau-claire)) — Browser platformer starring Lil’ G, with mobile support using customizable controls. Dodge traffic &amp; unique characters to deliver a towering stack of beer across Eau Claire with selectable custom music soundtrack.
 - **QuizTrekker - US States**\* ([natsteff/quiztrekker-us-states](https://github.com/natsteff/quiztrekker-us-states)) — A browser geography game for all 50 U.S. states, with optional Canadian provinces, U.S. territories &amp; Washington, D.C., and Canadian territories. Learn shapes, flags, abbreviations, and capitals with flashcards and quizzes. Progress saves locally.
+- **QuizTrekker: Cosmic Quest**\* ([natsteff/quiztrekker-cosmic-quest](https://github.com/natsteff/quiztrekker-cosmic-quest)) — A mobile-first space science quiz
 - **Seth Happens\! A New Adventure**\* ([natsteff/seth-happens-a-new-adventure](https://github.com/natsteff/seth-happens-a-new-adventure)) — Seth Happens - A New Adventure: beta arcade platforming with 12 adventures \(levels\), plus a bonus view-only Finale level.
 
 \* Shameless Self-Promotion
 
-Last successful sync that changed this list (UTC) · 2026-11-23
+Last successful sync that changed this list (UTC) · 2026-11-26
 <!-- github-stars:end -->
